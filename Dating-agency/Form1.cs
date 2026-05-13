@@ -11,44 +11,33 @@ namespace Dating_agency
             UpdateUI();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (cmbGender.SelectedItem == null) return;
-
-            myProfile = new Client(
-                cmbGender.SelectedItem.ToString(),
-                txtAboutMe.Text,
-                txtRequirements.Text
-            );
-
-            database.Add(myProfile);
-            UpdateUI();
-        }
-
         private void UpdateUI()
         {
             dgvClients.DataSource = null;
             dgvClients.DataSource = database.Where(c => !c.IsArchived).ToList();
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (cmbGender.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(txtName.Text) || cmbGender.SelectedItem == null)
             {
-                MessageBox.Show("Оберіть стать!");
+                MessageBox.Show("Будь ласка, введіть ім'я та оберіть стать!");
                 return;
             }
 
             myProfile = new Client(
+                txtName.Text,
+                (int)numAge.Value,
                 cmbGender.SelectedItem.ToString(),
                 txtAboutMe.Text,
                 txtRequirements.Text
             );
 
             database.Add(myProfile);
-
             UpdateUI();
 
+            txtName.Clear();
+            numAge.Value = 18;
             txtAboutMe.Clear();
             txtRequirements.Clear();
             cmbGender.SelectedIndex = -1;
