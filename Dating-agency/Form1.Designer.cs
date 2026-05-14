@@ -37,7 +37,6 @@
             txtRequirements = new TextBox();
             btnAdd = new Button();
             btnMatch = new Button();
-            btnArchive = new Button();
             btnDelete = new Button();
             txtName = new TextBox();
             numAge = new NumericUpDown();
@@ -133,18 +132,9 @@
             btnMatch.UseVisualStyleBackColor = true;
             btnMatch.Click += btnMatch_Click;
             // 
-            // btnArchive
-            // 
-            btnArchive.Location = new Point(324, 389);
-            btnArchive.Name = "btnArchive";
-            btnArchive.Size = new Size(75, 23);
-            btnArchive.TabIndex = 11;
-            btnArchive.Text = "В архів";
-            btnArchive.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(405, 389);
+            btnDelete.Location = new Point(324, 389);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(126, 23);
             btnDelete.TabIndex = 12;
@@ -195,7 +185,6 @@
             Controls.Add(numAge);
             Controls.Add(txtName);
             Controls.Add(btnDelete);
-            Controls.Add(btnArchive);
             Controls.Add(btnMatch);
             Controls.Add(btnAdd);
             Controls.Add(txtRequirements);
@@ -224,7 +213,6 @@
         private TextBox txtRequirements;
         private Button btnAdd;
         private Button btnMatch;
-        private Button btnArchive;
         private Button btnDelete;
         private TextBox txtName;
         private NumericUpDown numAge;
