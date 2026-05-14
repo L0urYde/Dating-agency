@@ -149,6 +149,7 @@
             btnDelete.TabIndex = 12;
             btnDelete.Text = "Видалити клієнта";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtName
             // 

@@ -42,5 +42,30 @@ namespace Dating_agency
             txtRequirements.Clear();
             cmbGender.SelectedIndex = -1;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (myProfile == null)
+            {
+                MessageBox.Show("Ви ще не створили заявку, яку можна видалити!");
+                return;
+            }
+
+            var confirmResult = MessageBox.Show(
+                $"Ви впевнені, що хочете видалити анкету користувача {myProfile.Name}?",
+                "Підтвердження видалення",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                database.Remove(myProfile);
+                myProfile = null;
+
+                UpdateUI();
+
+                MessageBox.Show("Вашу заявку успішно видалено з бази бюро.");
+            }
+        }
     }
 }
