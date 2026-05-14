@@ -67,5 +67,34 @@ namespace Dating_agency
                 MessageBox.Show("Вашу заявку успішно видалено з бази бюро.");
             }
         }
+
+        private void btnMatch_Click(object sender, EventArgs e)
+        {
+            if (myProfile == null)
+            {
+                MessageBox.Show("Спочатку створіть свою анкету!");
+                return;
+            }
+
+            var matches = database.Where(c =>
+                c != myProfile &&
+                c.Gender != myProfile.Gender &&
+                !c.IsArchived &&
+                (c.AboutMe.ToLower().Contains(myProfile.Requirements.ToLower()) ||
+                myProfile.AboutMe.ToLower().Contains(c.Requirements.ToLower()))
+            ).ToList();
+
+            if (matches.Count > 0)
+            {
+                MatchResultForm resultForm = new MatchResultForm(matches, myProfile);
+                resultForm.ShowDialog();
+
+                UpdateUI();
+            }
+            else
+            {
+                MessageBox.Show("На жаль, підходящих кандидатур поки що не знайдено");
+            }
+        }
     }
 }

@@ -1,0 +1,71 @@
+﻿namespace Dating_agency
+{
+    partial class MatchResultForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dgvMatches = new DataGridView();
+            btnSendInvite = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvMatches).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvMatches
+            // 
+            dgvMatches.BackgroundColor = SystemColors.Window;
+            dgvMatches.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMatches.Location = new Point(277, 12);
+            dgvMatches.Name = "dgvMatches";
+            dgvMatches.Size = new Size(240, 150);
+            dgvMatches.TabIndex = 0;
+            // 
+            // btnSendInvite
+            // 
+            btnSendInvite.Location = new Point(311, 168);
+            btnSendInvite.Name = "btnSendInvite";
+            btnSendInvite.Size = new Size(168, 23);
+            btnSendInvite.TabIndex = 0;
+            btnSendInvite.Text = "Сформувати запрошення";
+            // 
+            // MatchResultForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnSendInvite);
+            Controls.Add(dgvMatches);
+            Name = "MatchResultForm";
+            Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)dgvMatches).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private DataGridView dgvMatches;
+        private Button btnSendInvite;
+    }
+}

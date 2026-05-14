@@ -131,6 +131,7 @@
             btnMatch.TabIndex = 10;
             btnMatch.Text = "Підібрати пару";
             btnMatch.UseVisualStyleBackColor = true;
+            btnMatch.Click += btnMatch_Click;
             // 
             // btnArchive
             // 
