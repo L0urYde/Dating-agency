@@ -30,6 +30,8 @@
         {
             dgvMatches = new DataGridView();
             btnSendInvite = new Button();
+            txtInviteMessage = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMatches).BeginInit();
             SuspendLayout();
             // 
@@ -37,35 +39,58 @@
             // 
             dgvMatches.BackgroundColor = SystemColors.Window;
             dgvMatches.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMatches.Location = new Point(277, 12);
+            dgvMatches.Location = new Point(12, 12);
             dgvMatches.Name = "dgvMatches";
-            dgvMatches.Size = new Size(240, 150);
+            dgvMatches.Size = new Size(467, 150);
             dgvMatches.TabIndex = 0;
             // 
             // btnSendInvite
             // 
-            btnSendInvite.Location = new Point(311, 168);
+            btnSendInvite.Location = new Point(12, 293);
             btnSendInvite.Name = "btnSendInvite";
             btnSendInvite.Size = new Size(168, 23);
             btnSendInvite.TabIndex = 0;
             btnSendInvite.Text = "Сформувати запрошення";
+            btnSendInvite.Click += this.btnSendInvite_Click;
+            // 
+            // txtInviteMessage
+            // 
+            txtInviteMessage.Location = new Point(12, 190);
+            txtInviteMessage.Multiline = true;
+            txtInviteMessage.Name = "txtInviteMessage";
+            txtInviteMessage.Size = new Size(286, 97);
+            txtInviteMessage.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 172);
+            label1.Name = "label1";
+            label1.Size = new Size(187, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Ваше персональне запрошення:";
             // 
             // MatchResultForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(txtInviteMessage);
             Controls.Add(btnSendInvite);
             Controls.Add(dgvMatches);
             Name = "MatchResultForm";
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)dgvMatches).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvMatches;
         private Button btnSendInvite;
+        private TextBox txtInviteMessage;
+        private Label label1;
     }
 }
