@@ -25,7 +25,7 @@ namespace Dating_agency
         {
             if (dgvMatches.CurrentRow == null)
             {
-                MessageBox.Show("Оберіть кандидатуру зі списку!");
+                MessageBox.Show("Оберіть кандидатуру зі списку.");
                 return;
             }
 
@@ -37,7 +37,7 @@ namespace Dating_agency
 
             var selectedPartner = (Client)dgvMatches.CurrentRow.DataBoundItem;
 
-            string finalLetter = $"--- ОФІЦІЙНЕ ЗАПРОШЕННЯ ВІД БЮРО ---\n\n" +
+            string finalLetter = $"--- ЗАПРОШЕННЯ ---\n\n" +
                                  $"Відправник: {_currentUser.Name} (ID: {_currentUser.RegNumber})\n" +
                                  $"Отримувач: {selectedPartner.Name}\n" +
                                  $"----------------------------------\n" +
@@ -45,7 +45,7 @@ namespace Dating_agency
                                  $"----------------------------------\n" +
                                  $"Дата формування: {DateTime.Now:f}";
 
-            MessageBox.Show(finalLetter, "Запрошення успішно сформовано!");
+            MessageBox.Show(finalLetter, "Запрошення успішно сформовано.");
 
             _currentUser.IsArchived = true;
             selectedPartner.IsArchived = true;

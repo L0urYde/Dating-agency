@@ -42,6 +42,7 @@
             numAge = new NumericUpDown();
             label1 = new Label();
             label5 = new Label();
+            btnOpenArchive = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClients).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
             SuspendLayout();
@@ -134,7 +135,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(324, 389);
+            btnDelete.Location = new Point(405, 389);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(126, 23);
             btnDelete.TabIndex = 12;
@@ -175,11 +176,22 @@
             label5.TabIndex = 17;
             label5.Text = "Вік";
             // 
+            // btnOpenArchive
+            // 
+            btnOpenArchive.Location = new Point(324, 389);
+            btnOpenArchive.Name = "btnOpenArchive";
+            btnOpenArchive.Size = new Size(75, 23);
+            btnOpenArchive.TabIndex = 18;
+            btnOpenArchive.Text = "В архів";
+            btnOpenArchive.UseVisualStyleBackColor = true;
+            btnOpenArchive.Click += btnOpenArchive_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnOpenArchive);
             Controls.Add(label5);
             Controls.Add(label1);
             Controls.Add(numAge);
@@ -218,5 +230,6 @@
         private NumericUpDown numAge;
         private Label label1;
         private Label label5;
+        private Button btnOpenArchive;
     }
 }
