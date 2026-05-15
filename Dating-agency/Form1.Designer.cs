@@ -153,6 +153,7 @@
             // numAge
             // 
             numAge.Location = new Point(506, 57);
+            numAge.Minimum = new decimal(new int[] { 18, 0, 0, 0 });
             numAge.Name = "numAge";
             numAge.Size = new Size(120, 23);
             numAge.TabIndex = 15;

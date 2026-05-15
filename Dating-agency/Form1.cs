@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Dating_agency
 {
     public partial class Form1 : Form
@@ -36,6 +38,18 @@ namespace Dating_agency
             if (string.IsNullOrWhiteSpace(txtName.Text) || cmbGender.SelectedItem == null)
             {
                 MessageBox.Show("Будь ласка, введіть ім'я та оберіть стать.");
+                return;
+            }
+
+            if (numAge.Value < 18)
+            {
+                MessageBox.Show("Реєстрація доступна тільки для осіб старше 18 років!");
+                return;
+            }
+
+            if (!Regex.IsMatch(txtName.Text, @"^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]+$"))
+            {
+                MessageBox.Show("Ім'я може містити тільки літери!");
                 return;
             }
 
